@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Page Title</title>
+    </head>
+    <body>
+        <div class="Answer">
+            <h1>How Many Hours Will You Spend on Video Games in the Next 10 Years? </h1>
+            <h2>What is Your Name?</h2>
+            <input class="NameAnswer" placeholder="Name">
+            <h2>How Old are You?</h2>
+            <input class="AgeAnswer" placeholder="Age">
+            <h2>How Many Hours Do You Spend on Video Games a Day?</h2>
+            <input class="HoursAnswer" placeholder="Hours">
+        </div>
+        <button class="Submit">Submit</button>
+    </body>
+</html>
+
+body {
+    font-family: 'Josefin Sans';
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 16px;
+    display: flex;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+$(".Submit").click(function() {
+    let NameAnswer = $(".NameAnswer").val();
+    let AgeAnswer = $(".AgeAnswer").val();
+    AgeAnswer = Number(AgeAnswer);
+    let HoursAnswer = $(".HoursAnswer").val();
+    let Age = 10 + AgeAnswer;
+    let Days = 3650;
+    let Hours = HoursAnswer * Days;
+
+    $(".Answer").append("<p>" + NameAnswer + ", " + "When you are " + Age + "," + " You will have spent " + Hours + " Hours On Video Games" + "</p>");
+
+});
